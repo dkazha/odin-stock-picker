@@ -6,18 +6,18 @@ def stock_picker(prices)
   highest_profit = 0
 
   # Loop over each price and index to find the buy day
-  prices.each_with_index do |price1, index1|
+  prices.each_with_index do |price1, day1|
     # Loop a second time in order to compare prices and find the sell day
-    prices.each_with_index do |price2, index2|
+    prices.each_with_index do |price2, day2|
       # Check the profit
       profit = price2 - price1
 
       # Check if the profit is the highest
       # Check if the buy day came before the sell day
-      if profit > highest_profit && index1 < index2
+      if profit > highest_profit && day1 < day2
         highest_profit = profit
-        buy_day = index1
-        sell_day = index2
+        buy_day = day1
+        sell_day = day2
       end
     end
   end
