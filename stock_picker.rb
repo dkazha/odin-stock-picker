@@ -5,11 +5,15 @@ def stock_picker(prices)
   sell_day = 0
   highest_profit = 0
 
+  # Loop over each price and index
   prices.each_with_index do |price1, index1|
     p "First loop: price1 #{price1} index1 #{index1}"
+    # Loop a second time in order to compare prices
     prices.each_with_index do |price2, index2|
       p "Second loop: price2 #{price2} index2 #{index2}"
-
+      # Check the profit
+      profit = price2 - price1
+      p "Profit: #{profit}"
     end
   end
   puts "Best day to buy: #{buy_day}"
